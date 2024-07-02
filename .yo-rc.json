@@ -1,0 +1,16 @@
+{
+  "generator-ui5-app": {
+    "namespace": "com.example.masterdetail",
+    "framework": "OpenUI5",
+    "frameworkVersion": "1.125.0",
+    "author": "Feroz Hussain Shaik",
+    "initrepo": false,
+    "appId": "com.example.masterdetail",
+    "appURI": "com/example/masterdetail",
+    "cdnDomain": "sdk.openui5.org",
+    "defaultTheme": "sap_horizon",
+    "qunitCoverageFile": "qunit-coverage-istanbul.js",
+    "gte1_98_0": true,
+    "gte1_104_0": true
+  }
+}

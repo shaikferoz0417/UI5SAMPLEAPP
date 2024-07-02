@@ -1,0 +1,43 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="com.example.masterdetail.controller.Detail">
+    <Page
+        id="detailPage"
+        title="Detail"
+        showNavButton="false"
+        navButtonPress="onNavBack" class="sapUiContentPadding">
+        <content>
+            <VBox>
+                <Label text="ID"/>
+                <Input
+                    id="inputID"
+                    value="{/selectedItem/ID}"
+                    enabled="false"/>
+                <Label text="Name"/>
+                <Input
+                    id="inputName"
+                    value="{/selectedItem/Name}"/>
+                <Label text="Description"/>
+                <Input
+                    id="inputDescription"
+                    value="{/selectedItem/Description}"/>
+                <Label text="Status"/>
+                <Input
+                    id="inputStatus"
+                    value="{/selectedItem/Status}"/>
+            </VBox>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button
+                    text="Save"
+                    press="onSavePress"/>
+                <Button
+                    text="Discard"
+                    press="onDiscardPress"/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

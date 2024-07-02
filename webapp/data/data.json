@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "ID": "1",
+      "Name": "Item 1",
+      "Description": "Denim Blue jeans",
+      "Status": "Available"
+    },
+    {
+      "ID": "2",
+      "Name": "Item 2",
+      "Description": "Baggy Jeans",
+      "Status": "Out of Stock"
+    },
+    {
+      "ID": "3",
+      "Name": "Item 3",
+      "Description": "T-shirts",
+      "Status": "Unavailable"
+    }
+  ]
+}

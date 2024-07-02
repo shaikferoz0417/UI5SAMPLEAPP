@@ -1,0 +1,56 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="com.example.masterdetail.controller.Master">
+    <Page
+        id="masterPage"
+        title="Master"
+        showNavButton="false">
+        <headerContent>
+            <SearchField
+                id="searchField"
+                placeholder="Search"
+                search="onSearch"/>
+        </headerContent>
+        <content>
+            <List
+                id="itemList"
+                mode="SingleSelectMaster"
+                items="{
+                    path: '/items',
+                    sorter: { path: 'Name' },
+                    filters: { path: 'Name', operator: 'Contains', value1: '' }
+                }"
+                itemPress="onItemPress" class="sapUiContentPadding">
+                <items>
+                    <ObjectListItem
+                        title="{Name}"
+                        number="{ID}"
+                        intro="{Description}"
+                        type="Active"
+                        press="onItemPress">
+                     	<firstStatus>
+				<ObjectStatus
+					text="{Status}"
+					state="{
+						path: 'Status',
+						formatter: '.formatter.status'
+					}" />
+			</firstStatus>
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button
+                    text="Create"
+                    press="onCreatePress"/>
+                <Button
+                    text="Delete"
+                    press="onDeletePress"/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

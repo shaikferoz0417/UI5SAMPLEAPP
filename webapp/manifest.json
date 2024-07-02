@@ -1,0 +1,67 @@
+{
+  "_version": "1.12.0",
+  "sap.app": {
+    "id": "com.example.masterdetail",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "dataSources": {
+      "mainService": {
+        "uri": "data/data.json",
+        "type": "JSON"
+      }
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "com.example.masterdetail.view.App",
+      "type": "XML"
+    },
+    "dependencies": {
+      "minUI5Version": "1.60",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.ui.layout": {}
+      }
+    },
+    "models": {
+      "": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "mainService"
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "com.example.masterdetail.view",
+        "controlId": "app",
+        "transition": "slide"
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "master",
+          "target": ["master", "detail"]
+        },
+        {
+          "pattern": "detail/{itemId}",
+          "name": "detail",
+          "target": ["master", "detail"]
+        }
+      ],
+      "targets": {
+        "master": {
+          "viewName": "Master",
+          "viewLevel": 1,
+          "controlAggregation": "masterPages"
+        },
+        "detail": {
+          "viewName": "Detail",
+          "viewLevel": 2,
+          "controlAggregation": "detailPages"
+        }
+      }
+    }
+  }
+}
